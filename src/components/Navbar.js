@@ -35,9 +35,6 @@ function Navbar() {
                     Personal trainer
                 </Typography>
                     <div className={classes.navlinks}>
-                        <Link to="/" className={classes.link}>
-                            Home
-                        </Link>
                         <Link to="/customerlist" className={classes.link}>
                             Customers
                         </Link>
