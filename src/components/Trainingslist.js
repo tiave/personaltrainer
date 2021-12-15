@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { AgGridReact } from 'ag-grid-react';
 import Button from '@mui/material/Button';
-import moment from 'moment';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-material.css';
 
 function Trainingslist() {
     const [trainings, setTrainings] = useState([]);
 
-    useEffect(() => {
-        fetchTrainings();
-      }, []);
+      useEffect(() => {
+          fetchTrainings();
+        }, []);
 
       const fetchTrainings = () => {
         fetch('https://customerrest.herokuapp.com/gettrainings')
@@ -36,16 +35,13 @@ function Trainingslist() {
         }
 
       const columns= [
-        { field: 'date', sortable: true, filter: true, cellRenderer: (data) => {
-          return moment(data.createdAt).format('DD.MM.YYYY');}
-        },
-        { field: 'time', sortable: true, filter: true, cellRenderer: (data) => {
-          return moment(data.createdAt).format('h:mm:ss a');}
+        { field: 'date', sortable: true, filter: true, width: 140, cellRendererFramework: params => 
+        new Date(params.value).toLocaleDateString(),
         },
         { field: 'duration', sortable: true, filter: true, width: 140},
         { field: 'activity', sortable: true, filter: true, width: 140},
-        { headerName: 'First name',field: 'customer.firstname', sortable: true, filter: true, width: 120},
-        { headerName: 'Last name', field: 'customer.lastname', sortable: true, filter: true, width: 120},
+        { headerName: 'First name', field: 'customer.firstname', sortable: true, filter: true, width: 140},
+        { headerName: 'Last name', field: 'customer.lastname', sortable: true, filter: true, width: 140},
         {
           headerName: '',
           width: 100,
@@ -64,7 +60,7 @@ function Trainingslist() {
     
       return(
         <React.Fragment>
-          <div className= "ag-theme-material" style={{height:'700px',width:'85%',margin:'auto'}}>
+          <div className= "ag-theme-material" style={{height:'700px',width:'90%',margin:'auto'}}>
             <AgGridReact
               columnDefs={columns}
               rowData={trainings}

@@ -1,33 +1,25 @@
 import './App.css';
 import Customerlist from './components/Customerlist.js';
 import Trainingslist from './components/Trainingslist.js';
+import TrainingsCalendar from './components/TrainingsCalendar.js';
 import Home from './components/Home.js';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
+import Navbar from './components/Navbar.js';
 import{ BrowserRouter, Routes, Route, Link} from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <AppBar position="static">
-        <Toolbar>
-        <Typography variant="h6">
-          Personal trainer
-        </Typography>
         
-        </Toolbar>
-        </AppBar>
         <BrowserRouter>
-          <Link to="/customerlist">Customers</Link>{' '}
-          <Link to="/trainingslist">Trainings</Link >{' '}
+          <Navbar />
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route path="/customerlist" element={<Customerlist />}   />
             <Route path="/trainingslist" element={<Trainingslist />} />
+            <Route path="/trainingscalendar" element={<TrainingsCalendar />} />
             <Route path="*" render= {() => <h1>Page not found</h1>} />
           </Routes>
-      </BrowserRouter>
+        </BrowserRouter>
   </div>
   );
 }

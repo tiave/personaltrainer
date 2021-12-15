@@ -22,9 +22,9 @@ function AddTraining(props) {
     setCTraining({...CTraining, [event.target.name]: event.target.value});
   }
 
-  const inputDateChanged = (event) => {
+  /* const inputDateChanged = (event) => {
     setCTraining({...CTraining, date: new Date(event.target.value).toISOString() })
-  }
+  } */
   
   const handleSave = () => {
     props.addTraining(CTraining);
@@ -49,25 +49,15 @@ function AddTraining(props) {
           <DialogContent>
           <TextField
               name="date"
+              type="datetime-local"
               value={CTraining.date}
-              onChange={inputDateChanged}
+              onChange={inputChanged}
               margin="dense"
               label="Date"
               fullWidth
               variant="standard"
-            />
-           {/* <TextField
-              id="date"
-              name="date"
-              type="datetime-local"
-              value={CTraining.date}
-              onChange={inputDateChanged}
-              margin="dense"
-              label="Date and Time"
-              fullWidth
-              variant="standard"
               InputLabelProps={{shrink: true}}
-            /> */}
+            />
              <TextField
               name="duration"
               value={CTraining.duration}

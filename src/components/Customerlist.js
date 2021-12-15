@@ -109,7 +109,7 @@ const [trainings, setTrainings] = useState([]);
     {
       headerName: '',
       field: 'links.0.href',
-      width: 100,
+      width: 130,
       cellRendererFramework: params =>
         <AddTraining addTraining={addTraining}
           customer={params.value}
@@ -142,7 +142,7 @@ const [trainings, setTrainings] = useState([]);
   return(
     <React.Fragment>
     <AddCustomer addCustomer={addCustomer} />
-      <div className= "ag-theme-material" style={{height:'700px',width:'85%',margin:'auto'}}>
+      <div className= "ag-theme-material" style={{height:'700px',width:'90%',margin:'auto'}}>
         <AgGridReact
           columnDefs={columns}
           rowData={customers}
