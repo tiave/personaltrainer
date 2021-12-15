@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid'; //plugin for calendar 
-import timeGridPlugin from "@fullcalendar/timegrid"; //plygin for calendar
+import timeGridPlugin from "@fullcalendar/timegrid"; //plugin for calendar
 
 function TrainingsCalendar() {
     const [trainings, setTrainings] = useState([]);

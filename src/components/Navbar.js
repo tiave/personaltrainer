@@ -1,5 +1,5 @@
 import React from 'react';
-import {AppBar, Toolbar, Typography, makeStyles, CssBaseline } from "@material-ui/core";
+import { AppBar, Toolbar, Typography, makeStyles, CssBaseline } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
@@ -17,7 +17,6 @@ const useStyles = makeStyles((theme) => ({
       fontSize: "20px",
       marginLeft: theme.spacing(20),
       "&:hover": {
-        color: "yellow",
         borderBottom: "1px solid white",
       },
     },

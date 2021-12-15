@@ -3,7 +3,7 @@ import Customerlist from './components/Customerlist.js';
 import Trainingslist from './components/Trainingslist.js';
 import TrainingsCalendar from './components/TrainingsCalendar.js';
 import Navbar from './components/Navbar.js';
-import{ BrowserRouter, Routes, Route, Link} from "react-router-dom";
+import{ BrowserRouter, Routes, Route, } from "react-router-dom";
 
 function App() {
   return (
