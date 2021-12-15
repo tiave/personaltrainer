@@ -13,7 +13,7 @@ function Trainingslist() {
       }, []);
 
       const fetchTrainings = () => {
-        fetch('https://customerrest.herokuapp.com/gettrainings') //get trainings
+        fetch('https://customerrest.herokuapp.com/gettrainings')
         .then(response => response.json())
         .then(data => setTrainings(data))
         .catch(err => console.error(err));
@@ -21,7 +21,7 @@ function Trainingslist() {
 
       const deleteTraining = url => {
         if (window.confirm('Are you sure?')) {
-          fetch('https://customerrrest.herokuapp.com/api/trainings/' + url, { method: 'DELETE' })
+          fetch('https://customerrest.herokuapp.com/api/trainings/' + url, { method: 'DELETE' })
           .then(response => {
             if (response.ok) {
               fetchTrainings();
